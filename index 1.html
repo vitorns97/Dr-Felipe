@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr Felipe Gonçalves</title>
+
+  <!-- Fonts do Design System -->
+  <link href="assets/css2_0b2072b66163.css" rel="stylesheet" />
+  <link href="assets/css2_19fd9cc6b396.css" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #0f172a;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+    }
+
+    .container {
+      padding: 24px;
+    }
+
+    .hero {
+      position: relative;
+      height: 85vh;
+      display: flex;
+      align-items: flex-end;
+      color: white;
+    }
+
+    .hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 24px;
+      width: 100%;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-bottom: 24px;
+    }
+
+    .btn-primary {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #14b8a6;
+      color: white;
+      padding: 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-bottom: 12px;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: #0d9488;
+    }
+
+    .btn-secondary {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: white;
+      color: #0f172a;
+      padding: 16px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Seção 2 */
+
+    .section {
+      padding: 48px 24px;
+      background: #f8fafc;
+    }
+
+    .profile-img {
+      width: 100%;
+      border-radius: 16px;
+      margin-bottom: 24px;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .cro {
+      font-size: 14px;
+      color: #64748b;
+      margin-bottom: 16px;
+    }
+
+    .section p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #475569;
+      margin-bottom: 24px;
+    }
+
+    .benefits {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 32px 0;
+    }
+
+    .benefits li {
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: #0f172a;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 🔹 Seção 1 - Hero -->
+  <section class="hero">
+    <img src="assets/raw_files/imagem-1.png" alt="Dr Felipe Gonçalves">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Transformando sorrisos com tecnologia e precisão</h1>
+      <p>Implantes • Clareamento • Lentes de Contato Dental<br>Jeremoabo e Pedro Alexandre</p>
+      <a href="https://wa.me/5575998838163" class="btn-primary">
+        Agendar pelo WhatsApp
+      </a>
+      <a href="#sobre" class="btn-secondary">
+        Conhecer o Doutor
+      </a>
+    </div>
+  </section>
+
+  <!-- 🔹 Seção 2 - Autoridade -->
+  <section class="section" id="sobre">
+    <img src="assets/raw_files/imagem-2.png" class="profile-img" alt="Dr Felipe Gonçalves">
+
+    <h2>Dr. Felipe Gonçalves</h2>
+    <div class="cro">CRO-BA 21140 • Cirurgião-Dentista</div>
+
+    <p>
+      Especialista em implantes dentários e estética dental.
+      Atendimento humanizado, focado em devolver autoestima
+      e naturalidade ao seu sorriso.
+    </p>
+
+    <ul class="benefits">
+      <li>✔️ Experiência e tecnologia de ponta</li>
+      <li>✔️ Atendimento humanizado</li>
+      <li>✔️ Foco em estética e implantes</li>
+    </ul>
+
+    <a href="https://wa.me/5575998838163" class="btn-primary">
+      Agendar avaliação agora
+    </a>
+  </section>
+
+</body>
+
+</html>

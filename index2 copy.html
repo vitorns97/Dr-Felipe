@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Dr. Felipe Gonçalves — Cirurgião-Dentista especialista em implantes, clareamento e lentes de contato dental. Agende sua avaliação." />
+    <meta name="theme-color" content="#0f172a" />
+    <title>Dr. Felipe Gonçalves | Cirurgião-Dentista</title>
+
+    <!-- ═══════════════════════════════════════════
+       TIPOGRAFIA — Inter + Plus Jakarta Sans
+       ═══════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* ═══════════════════════════════════════════
+       RESET & BASE
+       ═══════════════════════════════════════════ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #ffffff;
+            color: #1e293b;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ═══════════════════════════════════════════
+       SEÇÃO 1 — HERO
+       Full-screen com imagem de fundo,
+       overlay gradiente e CTAs
+       ═══════════════════════════════════════════ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            min-height: 100dvh;
+            /* dynamic viewport p/ mobile */
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+
+        /* Imagem de fundo */
+        .hero__image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            z-index: 0;
+        }
+
+        /* Overlay gradiente escuro (de baixo p/ cima) */
+        .hero__overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background:
+                linear-gradient(to top,
+                    rgba(0, 0, 0, 0.78) 0%,
+                    rgba(0, 0, 0, 0.55) 35%,
+                    rgba(0, 0, 0, 0.18) 65%,
+                    rgba(0, 0, 0, 0.05) 100%);
+        }
+
+        /* Conteúdo sobre a imagem */
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 0 24px 40px;
+            color: #ffffff;
+        }
+
+        /* Badge de localização */
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 100px;
+            padding: 6px 14px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            color: rgba(255, 255, 255, 0.92);
+            margin-bottom: 20px;
+        }
+
+        .hero__badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #34d399;
+            flex-shrink: 0;
+        }
+
+        /* Headline */
+        .hero__title {
+            font-size: 30px;
+            font-weight: 800;
+            line-height: 1.12;
+            letter-spacing: -0.5px;
+            margin-bottom: 14px;
+            max-width: 340px;
+        }
+
+        /* Subheadline */
+        .hero__subtitle {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.65;
+            color: rgba(255, 255, 255, 0.82);
+            margin-bottom: 28px;
+            max-width: 320px;
+        }
+
+        .hero__subtitle strong {
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* ═══════════════════════════════════════════
+       BOTÕES — DESIGN SYSTEM
+       ═══════════════════════════════════════════ */
+
+        /* CTA Primário — WhatsApp verde premium */
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow:
+                0 4px 14px rgba(34, 197, 94, 0.35),
+                0 1px 3px rgba(0, 0, 0, 0.08);
+            margin-bottom: 12px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow:
+                0 6px 20px rgba(34, 197, 94, 0.45),
+                0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        /* Ícone WhatsApp inline (SVG embutido) */
+        .btn-primary svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        /* CTA Secundário — Branco / borda sutil */
+        .btn-secondary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 15px 24px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            border-radius: 14px;
+            border: 1.5px solid rgba(255, 255, 255, 0.28);
+            cursor: pointer;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ═══════════════════════════════════════════
+       SEÇÃO 2 — AUTORIDADE (CARD)
+       ═══════════════════════════════════════════ */
+        .authority {
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 32px 20px 48px;
+        }
+
+        .authority__card {
+            background: #ffffff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow:
+                0 1px 3px rgba(0, 0, 0, 0.04),
+                0 8px 30px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        /* Imagem do profissional */
+        .authority__image {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        /* Corpo do card */
+        .authority__body {
+            padding: 28px 24px 32px;
+        }
+
+        /* Nome */
+        .authority__name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f172a;
+            letter-spacing: -0.3px;
+            margin-bottom: 6px;
+        }
+
+        /* CRO */
+        .authority__cro {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #64748b;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f1f5f9;
+            width: 100%;
+        }
+
+        .authority__cro-badge {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            flex-shrink: 0;
+        }
+
+        /* Texto de autoridade */
+        .authority__text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #475569;
+            margin-bottom: 24px;
+            letter-spacing: 0.1px;
+        }
+
+        /* Lista de benefícios */
+        .authority__benefits {
+            list-style: none;
+            margin: 0 0 32px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .authority__benefits li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #1e293b;
+            line-height: 1.45;
+        }
+
+        /* Check icon */
+        .authority__check {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .authority__check svg {
+            width: 12px;
+            height: 12px;
+            color: #16a34a;
+        }
+
+        /* CTA dentro do card */
+        .btn-primary--card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px 24px;
+            background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow:
+                0 4px 14px rgba(34, 197, 94, 0.3),
+                0 1px 3px rgba(0, 0, 0, 0.06);
+        }
+
+        .btn-primary--card:hover {
+            transform: translateY(-1px);
+            box-shadow:
+                0 6px 20px rgba(34, 197, 94, 0.4),
+                0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        .btn-primary--card:active {
+            transform: translateY(0);
+        }
+
+        /* ═══════════════════════════════════════════
+       RESPONSIVIDADE (segurança desktop)
+       ═══════════════════════════════════════════ */
+        @media (min-width: 480px) {
+            .hero__content {
+                max-width: 430px;
+                margin: 0 auto;
+                padding-bottom: 48px;
+            }
+
+            .authority {
+                padding: 40px 20px 56px;
+            }
+
+            .authority__card {
+                max-width: 430px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .hero__title {
+                font-size: 36px;
+                max-width: 420px;
+            }
+
+            .hero__subtitle {
+                font-size: 15px;
+                max-width: 380px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════════
+       SEÇÃO 1 — HERO
+       Imagem fullscreen com overlay gradiente,
+       headline forte e dois CTAs
+       ═══════════════════════════════════════════════ -->
+    <section class="hero" aria-label="Apresentação">
+
+        <!-- Imagem de fundo -->
+        <img src="assets/raw_files/imagem-1.png" alt="Dr. Felipe Gonçalves em ambiente clínico" class="hero__image"
+            loading="eager" />
+
+        <!-- Overlay gradiente escuro -->
+        <div class="hero__overlay" aria-hidden="true"></div>
+
+        <!-- Conteúdo textual + CTAs -->
+        <div class="hero__content">
+
+            <!-- Badge de localização -->
+            <div class="hero__badge">
+                <span class="hero__badge-dot" aria-hidden="true"></span>
+                Jeremoabo e Pedro Alexandre
+            </div>
+
+            <!-- Headline principal -->
+            <h1 class="hero__title">
+                Transformando sorrisos com tecnologia e precisão
+            </h1>
+
+            <!-- Sub-headline -->
+            <p class="hero__subtitle">
+                <strong>Implantes</strong> · <strong>Clareamento</strong> · <strong>Lentes de Contato Dental</strong>
+            </p>
+
+            <!-- CTA Primário — WhatsApp -->
+            <a href="https://wa.me/5575998838163?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o"
+                class="btn-primary" aria-label="Agendar consulta pelo WhatsApp">
+                <!-- WhatsApp icon -->
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Agendar pelo WhatsApp
+            </a>
+
+            <!-- CTA Secundário — Scroll p/ seção autoridade -->
+            <a href="#sobre" class="btn-secondary">
+                Conhecer o Doutor
+            </a>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+       SEÇÃO 2 — AUTORIDADE
+       Card premium com foto, credenciais,
+       benefícios e CTA final
+       ═══════════════════════════════════════════════ -->
+    <section class="authority" id="sobre" aria-label="Sobre o Dr. Felipe">
+
+        <article class="authority__card">
+
+            <!-- Foto profissional -->
+            <img src="assets/raw_files/imagem-2.png" alt="Dr. Felipe Gonçalves — Cirurgião-Dentista"
+                class="authority__image" loading="lazy" />
+
+            <div class="authority__body">
+
+                <!-- Nome -->
+                <h2 class="authority__name">Dr. Felipe Gonçalves</h2>
+
+                <!-- CRO + Titulação -->
+                <div class="authority__cro">
+                    <span class="authority__cro-badge" aria-hidden="true"></span>
+                    CRO-BA 21140 · Cirurgião-Dentista
+                </div>
+
+                <!-- Texto de autoridade -->
+                <p class="authority__text">
+                    Especialista em implantes dentários e estética dental com anos de
+                    experiência clínica. Atendimento humanizado, focado em devolver
+                    autoestima e naturalidade ao seu sorriso.
+                </p>
+
+                <!-- Benefícios -->
+                <ul class="authority__benefits">
+                    <li>
+                        <span class="authority__check" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        Experiência e tecnologia de ponta
+                    </li>
+                    <li>
+                        <span class="authority__check" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        Atendimento humanizado e acolhedor
+                    </li>
+                    <li>
+                        <span class="authority__check" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </span>
+                        Foco em estética dental e implantes
+                    </li>
+                </ul>
+
+                <!-- CTA Final — WhatsApp -->
+                <a href="https://wa.me/5575998838163?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o"
+                    class="btn-primary--card" aria-label="Agendar avaliação pelo WhatsApp">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"
+                        style="width:18px;height:18px;flex-shrink:0">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                    Agendar avaliação agora
+                </a>
+
+            </div>
+        </article>
+
+    </section>
+
+</body>
+
+</html>
